@@ -1,0 +1,12 @@
+[general]
+import = ["~/.config/alacritty/themes/gruvbox_dark.toml"]
+live_config_reload = true
+
+[window]
+dimensions = { columns = 80, lines = 24 }
+decorations = "none"
+decorations_theme_variant = "Dark"
+
+[font]
+normal = { family = "JetBrainsMono NF", style = "Regular" }
+size = 12
