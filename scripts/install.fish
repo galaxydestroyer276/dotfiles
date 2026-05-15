@@ -20,20 +20,26 @@ end
 function backup_old_dotfiles
     mkdir -p $DOTFILES_BACKUP_DIR
     for item in $(get_dotfiles_item_list)
-        cp -rf $item $DOTFILES_BACKUP_DIR/
+        if test -d $item -a -e $item
+            cp -vrf $item $DOTFILES_BACKUP_DIR/
+        end
     end
 end
 
 function backup_old_config
     mkdir -p $CONFIG_BACKUP_DIR
     for item in $HOME/.config
-        cp -rf $item $CONFIG_BACKUP_DIR/
+        if test -d $item -a -e $item
+            cp -rf $item $CONFIG_BACKUP_DIR/
+        end
     end
 end
 
 function cleanup_old_dotfiles
     for item in $(get_dotfiles_item_list)
-        rm -rf $item
+        if test -d $item -a -e $item
+            rm -vrf $item
+        end
     end
 end
 
