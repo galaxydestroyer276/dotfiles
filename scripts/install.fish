@@ -52,3 +52,11 @@ backup_old_dotfiles
 backup_old_config
 cleanup_old_dotfiles
 install_new_dotfiles
+
+if test ! -e $HOME/.local/bin/uv
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+end
+
+if test ! -e $HOME/.local/bin/ruff
+    uv tool install ruff@latest
+end
