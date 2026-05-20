@@ -58,5 +58,5 @@ if test ! -e $HOME/.local/bin/uv
 end
 
 if test ! -e $HOME/.local/bin/ruff
-    uv tool install ruff@latest
+    $HOME/.local/bin/uv tool install ruff@latest
 end
